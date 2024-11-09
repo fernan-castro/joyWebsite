@@ -39,6 +39,31 @@ body {
     width: 100%; /* Expands the underline on hover */
 }
 
+.card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: moveup 0.5s linear forwards;
+    animation-delay: 1.5s;
+}
+.anim {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: moveup 0.5s linear forwards;
+    animation-delay: 0.5s;
+}
+.lead {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: moveup 0.5s linear forwards;
+    animation-delay: 1.0s;
+}
+@keyframes moveup {
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
 
 footer {
     background-color: #ffe5d9;
