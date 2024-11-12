@@ -12,7 +12,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
-<body><!-- navbar are Bootstrap classes -->
+<body>
+    <!-- Star Container for animated stars and sparkles -->
+    <!-- Container for stars -->
+    <div id="star-container"></div>
+
+    <!-- JavaScript for generating stars -->
+    <script>
+        function generateStars(numStars) {
+            const container = document.getElementById('star-container');
+            
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Random position for the star
+                star.style.top = `${Math.random() * 100}vh`;
+                star.style.left = `${Math.random() * 100}vw`;
+                
+                // Random size for the star
+                const size = Math.random() * 5 + 10;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+
+                // Random animation delay for each star
+                const delay = Math.random() * 2;
+                star.style.animationDelay = `${delay}s`;
+
+                // Random class for alternating colors
+                if (Math.random() > 0.5) {
+                    star.classList.add('alt');
+                } else if (Math.random() > 0.25) {
+                    star.classList.add('alt2');
+                }
+
+                container.appendChild(star);
+            }
+        }
+
+        // Generate x amount of stars
+        generateStars(40);
+
+    </script>
+
+
+    <!-- navbar are Bootstrap classes -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <!-- Logo area -->
         <a class="navbar-brand" href="index.html">

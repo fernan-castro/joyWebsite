@@ -1,5 +1,6 @@
 body {
     background-color: #f7e8e8;
+    /* background-color: #f7e8e8; */
     color: #333;
 }
 
@@ -69,5 +70,68 @@ footer {
     background-color: #ffe5d9;
 }
 
+/* color amarillo pa sparkle: f2e33b */
+/* Base styling for stars and sparkles */
+/* General star styling */
+.star {
+    position: absolute;
+    width: 30px; /* Size of the cross */
+    height: 30px;
+    transform: translate(-50%, -50%); /* Center the star */
+    top: 50%; /* Start positioning from the center */
+    left: 50%;
+    animation: shimmer 2s infinite alternate ease-in-out;
+}
 
+/* Horizontal and vertical lines (cross) */
+.star:before,
+.star:after {
+    content: '';
+    position: absolute;
+    width: 20%; /* Width of the arms */
+    height: 100%; /* Full height for vertical line */
+    background: #90d4c5; /* Color of the cross */
+    border-radius: 20px; /* Rounded edges for the arms */
+    left: 50%; /* Center horizontally */
+    top: 50%; /* Center vertically */
+    transform: translate(-50%, -50%); /* Offset by 50% of the element's width/height to center it */
+}
 
+/* Rotate the vertical arm */
+.star:after {
+    transform: translate(-50%, -50%) rotate(90deg); /* Rotate by 90 degrees to make it vertical */
+}
+
+/* Optional: Alternate colors for stars */
+.star.alt:before,
+.star.alt:after {
+    background: #ffcc00; /* Different color for alt class */
+}
+
+.star.alt2:before,
+.star.alt2:after {
+    background: #f2e33b; /* Different color for alt2 class */
+}
+
+/* Animation shimmer effect */
+@keyframes shimmer {
+    0%, 100% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Container for stars to cover the entire viewport */
+#star-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+}
